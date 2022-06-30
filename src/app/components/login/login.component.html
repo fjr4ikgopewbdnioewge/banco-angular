@@ -8,14 +8,24 @@
     <input #usuarioInput type="text" name="usuario" id="usuario">
 
     <label for="password">Password</label>
-    <input #passwordInput type="text" name="password" id="password">
+    <input
+      (keyup)="loginGestorEnter($event, usuarioInput, passwordInput)"
+      #passwordInput
+      type="password"
+      name="password"
+      id="password">
 
     <button
       class="login-button"
-      (click)="loginGestor(usuarioInput, passwordInput)"
-    >
+      (click)="loginGestor(usuarioInput, passwordInput)">
       Entrar
     </button>
+
+    <span
+      [class.login-mensaje-oculto]="!estaAutenticado"
+      class="login-mensaje">
+      Autenticación incorrecta
+    </span>
 
   </div>
 
