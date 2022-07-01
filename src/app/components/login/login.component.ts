@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +14,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private bancoService: BancoService,
-    private router: Router  // este objeto nos permite realizar redirecciones
+    private router: Router,  // este objeto nos permite realizar redirecciones
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
+    if(this.authService.estaAutenticadoGestor()) {
+      this.router.navigate(['chat']);
+    }
   }
 
   async loginGestor(

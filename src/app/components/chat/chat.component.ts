@@ -52,7 +52,7 @@ export class ChatComponent implements OnInit {
     mensajeInput.value = ''; // borra el contenido el input del mensaje
   }
 
-  onEnviarMensaje(
+  onEnviarMensajeEnter(
     event: KeyboardEvent,
     mensajeInput: HTMLInputElement
   ) {
