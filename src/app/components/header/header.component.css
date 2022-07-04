@@ -26,10 +26,15 @@
 }
 
 .main-header__info {
-  font-weight: 600;
+  font-weight: bold;
   font-size: 0.8rem;
   color: black;
   font-family: 'Times New Roman', Times, serif;
+}
+
+.main-header__usuario {
+  color: red;
+  padding-left: 0.5rem;
 }
 
 .main-nav {
@@ -61,6 +66,7 @@
 }
 
 .main-nav__item_logout a {
+  cursor: pointer;
   color: white;
   background: #ff1b68;
   padding: 0.5rem 1rem;
